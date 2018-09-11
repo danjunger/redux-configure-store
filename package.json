@@ -1,0 +1,34 @@
+{
+  "name": "redux-configure-store",
+  "version": "1.0.0",
+  "description": "A helper to encapsulate store creation logic",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint src test",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack"
+  },
+  "module": "es/index.js",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "connected-react-router": "^4.4.1",
+    "cross-env": "^5.2.0",
+    "history": "^4.7.2",
+    "react": "^16.5.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0"
+  }
+}
